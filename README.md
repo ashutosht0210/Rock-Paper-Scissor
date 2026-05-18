@@ -8,7 +8,7 @@ A clean, responsive single-player Rock Paper Scissors game built with vanilla HT
 
 > Open `index.html` in any browser to play.
 
-> [Play Directly here.]()
+> [Play Directly here.](https://ashutosht0210.github.io/Rock-Paper-Scissor/)
 
 ## 📁 Project Structure
 

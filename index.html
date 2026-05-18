@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rock-Paper-Scissors</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Rock · Paper · Scrissors</h1>
+    
+    <!-- Scoreboard -->
+    <div id="scoreboard">
+        <div class="score-card">
+            <span class="score-label" style="color:#e63946;">Wins</span>
+            <span class="score-val" id="score-w">0</span>
+        </div>
+        <div class="score-card">
+            <span class="score-label">Draws</span>
+            <span class="score-val" id="score-d">0</span>
+        </div>
+        <div class="score-card">
+            <span class="score-label" style="color:#4db8ff;">Losses</span>
+            <span class="score-val" id="score-l">0</span>
+        </div>
+    </div>
+
+    <!-- Game Section -->
+    <div class="game-section">
+
+        <div class="box">
+            <div class="choice" id="rock"></div>
+            Rock
+        </div>
+        
+        <div class="box">
+            <div class="choice" id="paper"></div>
+            Paper
+        </div> 
+        
+        <div class="box">
+            <div class="choice" id="scissor"></div>
+            Scissors
+        </div> 
+    </div>
+
+    <!-- Restart button -->
+    <div style="text-align: center; margin-top: 20px;">
+        <button id="replay">Restart</button>
+    </div>
+
+    <!-- Status message -->
+    <div id="status-msg">
+        <p id="msg-user"></p>
+        <p id="msg-comp"></p>
+        <p id="msg-win"></p>
+    </div>
+
+    <!-- Rules -->
+     <section class="rules">
+        <h2>How to Play</h2>
+
+        <ul class="rules-list">
+            <li>✊ <strong>Rock</strong> smashes Scissors</li>
+            <li>🖐️ <strong>Paper</strong> covers Rock</li>
+            <li>✌️ <strong>Scissors</strong> cuts Paper</li>
+        </ul>
+
+        <p class="tie-note rules-list">🤝 Same move? It's a <strong>Tie</strong> — play again!</p>
+    </section>
+
+    <footer>
+        <p class="footer-title">Rock · Paper · Scissors</p>
+        <p class="footer-sub">A classic game. Single player. One winner.</p>
+        <p class="footer-copy">© 2026 Made with ❤️</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

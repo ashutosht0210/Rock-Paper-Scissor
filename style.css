@@ -1,0 +1,300 @@
+@import url('https://fonts.googleapis.com/css2?family=Bangers&family=Nunito:wght@400;600;700;800&display=swap');
+
+* {
+    border: none;
+    margin: 0px;
+    border: border-box;
+    text-align: center;
+
+}
+
+:root {
+    --bg:       #0d0d1a;
+    --surface:  #14142b;
+    --surface2: #1e1e3f;
+    --gold:     #f0c040;
+    --win:      #4ade80;
+    --lose:     #f87171;
+    --text:     #e2ddd8;
+    --muted:    #7a7a9a;
+}
+
+body {
+    background-color: var(--bg);
+    color: var(--text);
+    font-family: 'Nunito', sans-serif;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    /* max-width: 800px; */
+    margin: 0 auto;
+}
+
+h1 {
+    font-family: 'Bangers', cursive;
+    text-align: center;
+    font-size: 3rem;
+    background-color: var(--surface);
+    color: var(--gold);
+    height: 70px;
+    line-height: 70px;
+    letter-spacing: 4px;
+    border-bottom: 3px solid var(--gold);
+    position: relative;
+    overflow: hidden;
+}
+
+h1::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse at 50% -20%, rgba(240,192,64,.15) 0%, transparent 70%);
+    pointer-events: none;
+}
+
+/* Scoreboard */
+#scoreboard {
+    display: flex;
+    justify-content: center;
+    gap: clamp(16px, 5vw, 56px);
+    padding: 18px 16px;
+    background: linear-gradient(135deg, var(--surface) 0%, var(--surface2) 100%);
+    border-bottom: 1px solid rgba(255,255,255,.05);
+}
+
+.score-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+    min-width: 56px;
+}
+
+.score-label {
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    color: var(--muted);
+}
+
+.score-val {
+    
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--gold);
+    letter-spacing: 2px;
+    line-height: 1;
+    transition: transform .15s ease;  
+}
+
+
+
+/* Game Section */
+.game-section {
+    
+    height: auto;
+    min-height: 260px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    font-size: clamp(0.8rem, 2.2vw, 1rem);
+    font-weight: 800;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--muted);
+    padding: clamp(20px, 4vw, 40px) clamp(10px, 3vw, 32px);
+    gap: clamp(8px, 2vw, 24px);
+    flex-wrap: wrap;
+    
+}
+
+.box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    cursor: pointer;
+    transition: color .2s ease;
+}
+ 
+.box:hover {
+    color: var(--gold);
+}
+
+.choice {
+    height: clamp(90px, 20vw, 180px);
+    width:  clamp(90px, 20vw, 180px);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: var(--surface2);
+    border-radius: 50%;
+    border: 2px solid rgba(255,255,255,.07);
+    transition: background-color .25s ease, transform .2s ease, border-color .25s ease, box-shadow .25s ease;
+    flex-grow: 0;
+    flex-shrink: 0;
+}
+
+.choice:hover {
+    background-color: #2a2a55;
+    transform: translateY(-5px) scale(1.05);
+    border-color: var(--gold);
+    box-shadow: 0 8px 28px rgba(240,192,64,.2);
+}
+
+.choice:active {
+    transform: scale(.93);
+}
+
+#rock {background-image: url("images/rock.png");}
+#paper {background-image: url("images/paper.png");}
+#scissor {background-image: url("images/scissors.png");}
+
+/* Restart button */
+#replay {
+    display: block;
+    margin: 4px auto 28px;
+    background: transparent;
+    color: var(--gold);
+    height: 48px;
+    width: 140px;
+    border-radius: 40px;
+    font-size: 0.85rem;
+    font-weight: 800;
+    letter-spacing: 3px;
+    font-family: "Nunito", sans-serif;
+    cursor: pointer;
+    border: 2px solid var(--gold);
+    transition: background-color .2s ease, color .2s ease, transform .15s ease;
+
+}
+
+#replay:hover {
+    background-color: var(--gold);
+    color: var(--bg);
+    transform: translateY(-2px);
+}
+
+#replay:active {
+    transform: scale(.95);
+}
+
+/* Status Message */
+#status-msg {
+    text-align: center;
+    font-size: clamp(0.9rem, 2.5vw, 1.1rem);
+    font-weight: 700;
+    color: var(--muted);
+    margin-top: 8px;
+    min-height: 90px;
+    letter-spacing: 1px;
+    padding: 12px 16px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+}
+
+#msg-user,
+#msg-comp {
+    color: var(--text);
+}
+ 
+#msg-win {
+    font-size: clamp(1.4rem, 4vw, 2rem);
+    letter-spacing: 1px;
+    color: var(--gold);
+    margin-top: 4px;
+}
+
+/* Rules Section */
+
+ul {
+    list-style: none;
+}
+
+.rules {
+    margin: 16px 12px 40px;
+    background-color: var(--surface);
+    border-radius: 20px;
+    padding: clamp(20px, 4vw, 36px) clamp(16px, 4vw, 40px);
+    border: 1px solid rgba(255,255,255,.05);
+}
+
+.rules h2 {
+    font-size: clamp(1.3rem, 3.5vw, 1.8rem);
+    color: var(--gold);
+    text-align: center;
+    margin-bottom: 20px;
+    letter-spacing: 2px;
+}
+
+.rules-list {
+    background-color: var(--surface2);
+    border-radius: 14px;
+    padding: 16px 20px;
+    margin-bottom: 12px;
+}
+
+.tie-note, .rules-list li {
+    color: var(--text);
+    font-size: clamp(0.85rem, 2.2vw, 1.05rem);
+    line-height: 1.8;
+}
+
+.rules ul li {
+    margin-bottom: 4px;
+}
+
+/* Footer Section */
+
+footer {
+    background-color: var(--surface);
+    text-align: center;
+    padding: 28px 20px;
+    margin-top: auto;
+    border-top: 1px solid rgba(255,255,255,.05);
+}
+
+.footer-title {
+    font-family: 'Bangers', cursive;
+    font-size: 1.4rem;
+    color: var(--gold);
+    letter-spacing: 3px;
+    margin-bottom: 6px;
+}
+
+.footer-sub {
+    font-size: 0.85rem;
+    color: var(--muted);
+    margin-bottom: 10px;
+}
+
+.footer-copy {
+    font-size: 0.72rem;
+    color: #44446a;
+}
+
+/* ── Responsive ── */
+@media (max-width: 480px) {
+    .game-section {
+        min-height: auto;
+        padding: 20px 8px;
+        gap: 8px;
+    }
+ 
+    .choice {
+        height: 85px;
+        width: 85px;
+    }
+ 
+    #scoreboard {
+        gap: 18px;
+    }
+ 
+    .rules {
+        margin: 12px 8px 32px;
+    }
+}

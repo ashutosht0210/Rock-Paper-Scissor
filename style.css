@@ -36,7 +36,7 @@ h1 {
     font-size: 3rem;
     background-color: var(--surface);
     color: var(--gold);
-    height: 70px;
+    height: auto;
     line-height: 70px;
     letter-spacing: 4px;
     border-bottom: 3px solid var(--gold);
@@ -278,7 +278,12 @@ footer {
 }
 
 /* ── Responsive ── */
-@media (max-width: 480px) {
+@media (max-width: 515px) {
+    h1 {
+        text-wrap: wrap;
+        font-size: 2rem;
+        color: var(--gold);
+    }
     .game-section {
         min-height: auto;
         padding: 20px 8px;
